@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Izabela Xavier | Backend Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background: #0f0c29; background: linear-gradient(to right, #24243e, #302b63, #0f0c29); color: white; min-height: 100vh; line-height: 1.6; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+
+        .hero {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #00d4ff;
+            margin-bottom: 20px;
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; background: linear-gradient(to right, #00d4ff, #9d00ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { color: #ccc; margin-bottom: 25px; font-size: 1.2rem; }
+
+        .social-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; }
+        .social-links a { color: white; font-size: 2.2rem; transition: 0.3s; }
+        .social-links a:hover { color: #00d4ff; transform: scale(1.2); }
+
+        .btn-cv {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: #00d4ff; color: #0a0a0c; padding: 12px 30px;
+            border-radius: 50px; text-decoration: none; font-weight: bold;
+            transition: 0.3s; margin-top: 10px;
+        }
+        .btn-cv:hover { background: #0099ff; transform: scale(1.05); }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            height: 100%;
+        }
+
+        .info-card h2 { color: #00d4ff; margin-bottom: 20px; font-size: 1.8rem; display: flex; align-items: center; gap: 12px; }
+        .info-card p { color: #ccc; font-size: 1.1rem; margin-bottom: 20px; text-align: justify; }
+        .info-card strong { color: #00d4ff; }
+
+        .grid-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
+
+        .tech-icons { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+        .tech-item { background: rgba(255, 255, 255, 0.1); padding: 8px 18px; border-radius: 10px; font-size: 0.85rem; border: 1px solid rgba(0, 212, 255, 0.3); }
+
+        .section-title { margin: 80px 0 40px; text-align: center; font-size: 2.5rem; }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            transition: 0.4s;
+            display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .card:hover { background: rgba(255, 255, 255, 0.08); transform: translateY(-10px); border-color: #00d4ff; box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1); }
+
+        .card h3 { color: #00d4ff; margin-bottom: 10px; font-size: 1.4rem; }
+        .badge { background: rgba(0, 212, 255, 0.2); color: #00d4ff; padding: 5px 12px; border-radius: 15px; font-size: 0.75rem; display: inline-block; margin-bottom: 15px; font-weight: bold; }
+
+        .links { margin-top: 25px; display: flex; gap: 10px; }
+        .links a { text-decoration: none; font-size: 0.9rem; padding: 12px; border-radius: 10px; font-weight: 600; flex: 1; text-align: center; transition: 0.3s; }
+        .btn-github { border: 1px solid white; color: white; }
+        .btn-github:hover { background: white; color: black; }
+        .btn-live { background: #00d4ff; color: #0a0a0c; border: 1px solid #00d4ff; }
+
+        footer { text-align: center; padding: 80px 0; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header class="hero">
+        <img src="/foto_linkedin.jpg" alt="Izabela Xavier" class="profile-img">
+
+        <h1>Izabela Xavier</h1>
+        <p>Desenvolvedora Backend Java | Estagiária de TI na Prefeitura de Matozinhos</p>
+
+        <div class="social-links">
+            <a href="https://linkedin.com/in/izabelaxavier" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/izabelaxavier" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="mailto:izabelaxavier89@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+
+        <a href="/Curriculo_Izabela_Xavier_Profissional.pdf" download class="btn-cv">
+            <i class="fas fa-file-download"></i> Baixar Currículo PDF
+        </a>
+
+        <div class="tech-icons">
+            <span class="tech-item"><i class="fab fa-java"></i> Java 17</span>
+            <span class="tech-item"><i class="fas fa-leaf"></i> Spring Boot 3</span>
+            <span class="tech-item"><i class="fas fa-database"></i> PostgreSQL / MySQL</span>
+            <span class="tech-item"><i class="fab fa-git-alt"></i> Git & GitHub</span>
+        </div>
+    </header>
+
+    <section style="margin-top: 40px;">
+        <div class="info-card">
+            <h2><i class="fas fa-rocket"></i> Minha Trajetória</h2>
+            <p>
+                Sou movida pela resolução de problemas. No meu dia a dia na <strong>Prefeitura de Matozinhos</strong>, projeto e desenvolvo soluções que trazem transparência ao setor público.
+                Recentemente, idealizei uma <strong>API robusta em Java (Spring Boot)</strong> para automação fiscal, aplicando conceitos avançados de trilha de auditoria e segurança.
+            </p>
+            <p>
+                Acredito que a tecnologia deve facilitar vidas. Essa visão me levou a conquistar <strong>nota máxima</strong> em projetos de impacto social, unindo desenvolvimento sólido e entrega de valor real.
+                Meu foco é evoluir constantemente no ecossistema Backend, transformando lógica complexa em sistemas eficientes.
+            </p>
+        </div>
+    </section>
+
+    <div class="grid-info">
+        <div class="info-card">
+            <h2><i class="fas fa-graduation-cap"></i> Formação</h2>
+            <p><strong>ADS @ UNINTER</strong></p>
+            <p style="font-size: 0.95rem;">Previsão de Formatura: <strong>2027</strong></p>
+            <p style="font-size: 0.95rem; margin-top: 10px;"><i class="fas fa-language"></i> Inglês: Intermediário</p>
+        </div>
+        <div class="info-card">
+            <h2><i class="fas fa-code-branch"></i> Stack Técnica</h2>
+            <ul style="list-style: none; color: #ccc; font-size: 0.95rem;">
+                <li><i class="fas fa-check" style="color: #00d4ff;"></i> Spring Data JPA & Hibernate</li>
+                <li><i class="fas fa-check" style="color: #00d4ff;"></i> APIs REST & SQL</li>
+                <li><i class="fas fa-check" style="color: #00d4ff;"></i> Git, GitHub & Maven</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2 class="section-title">Projetos em Destaque</h2>
+
+    <div class="projects-grid">
+        <div class="card" th:each="p : ${projetos}">
+            <div>
+                <span th:text="${p.emoji}" style="font-size: 2.8rem;"></span>
+                <h3 th:text="${p.nome}" style="margin-top: 15px;"></h3>
+                <span class="badge" th:text="${p.tecnologias}"></span>
+                <p th:text="${p.descricao}" style="font-size: 1rem; color: #aaa;"></p>
+            </div>
+            <div class="links">
+                <a th:href="${p.linkGithub}" target="_blank" class="btn-github"><i class="fab fa-github"></i> Código</a>
+                <a th:if="${p.linkDeploy != null}" th:href="${p.linkDeploy}" target="_blank" class="btn-live"><i class="fas fa-external-link-alt"></i> Online</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Izabela Xavier | <strong>Backend Developer</strong></p>
+        <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">
+            Construído com Java 17, Spring Boot e persistência de dados.
+        </p>
+        <p style="margin-top: 10px; opacity: 0.5;">ADS | Uninter 2026</p>
+    </footer>
+</div>
+
+</body>
+</html>
