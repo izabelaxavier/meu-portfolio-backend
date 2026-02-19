@@ -4,7 +4,7 @@
   <a href="https://meu-portfolio-backend-production.up.railway.app">
     <img src="https://img.shields.io/badge/Acesse%20o%20Projeto-Railway-blueviolet?style=for-the-badge" alt="Link do Projeto">
   </a>
-  <a href="https://www.linkedin.com/in/izabelaxavier">
+  <a href="https://www.linkedin.com/in/izabela-xavier-dev/">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
   </a>
 </p>
@@ -40,4 +40,4 @@ Atualmente sou **Estagiária de TI na Prefeitura de Matozinhos**, onde trabalho 
 ---
 
 ### 📫 Contato
-📧 [izabelaxavier89@gmail.com](mailto:izabelaxavier89@gmail.com) | 🔗 [LinkedIn](https://www.linkedin.com/in/izabelaxavier)
+📧 [izabelaxavier89@gmail.com](mailto:izabelaxavier89@gmail.com) | 🔗 [LinkedIn](https://www.linkedin.com/in/izabela-xavier-dev/)
