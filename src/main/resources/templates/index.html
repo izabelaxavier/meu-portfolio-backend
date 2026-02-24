@@ -94,7 +94,7 @@
     <header class="hero">
         <img src="/foto_linkedin.jpg" alt="Izabela Xavier" class="profile-img">
 
-        <h1>Izabela Xavier</h1>
+        <h1 th:text="${nome}">Izabela Xavier</h1>
         <p>Desenvolvedora Backend Java | Estagiária de TI na Prefeitura de Matozinhos</p>
 
         <div class="social-links">
@@ -111,6 +111,7 @@
             <span class="tech-item"><i class="fab fa-java"></i> Java 17</span>
             <span class="tech-item"><i class="fas fa-leaf"></i> Spring Boot 3</span>
             <span class="tech-item"><i class="fas fa-database"></i> PostgreSQL / MySQL</span>
+            <span class="tech-item"><i class="fab fa-figma"></i> Figma</span>
             <span class="tech-item"><i class="fab fa-git-alt"></i> Git & GitHub</span>
         </div>
     </header>
@@ -141,7 +142,7 @@
             <ul style="list-style: none; color: #ccc; font-size: 0.95rem;">
                 <li><i class="fas fa-check" style="color: #00d4ff;"></i> Spring Data JPA & Hibernate</li>
                 <li><i class="fas fa-check" style="color: #00d4ff;"></i> APIs REST & SQL</li>
-                <li><i class="fas fa-check" style="color: #00d4ff;"></i> Git, GitHub & Maven</li>
+                <li><i class="fas fa-check" style="color: #00d4ff;"></i> UI/UX Prototyping (Figma)</li>
             </ul>
         </div>
     </div>
@@ -156,9 +157,16 @@
                 <span class="badge" th:text="${p.tecnologias}"></span>
                 <p th:text="${p.descricao}" style="font-size: 1rem; color: #aaa;"></p>
             </div>
+
             <div class="links">
-                <a th:href="${p.linkGithub}" target="_blank" class="btn-github"><i class="fab fa-github"></i> Código</a>
-                <a th:if="${p.linkDeploy != null}" th:href="${p.linkDeploy}" target="_blank" class="btn-live"><i class="fas fa-external-link-alt"></i> Online</a>
+                <a th:if="${p.linkGithub != null}" th:href="${p.linkGithub}" target="_blank" class="btn-github">
+                    <i class="fab fa-github"></i> Código
+                </a>
+
+                <a th:if="${p.linkDeploy != null}" th:href="${p.linkDeploy}" target="_blank" class="btn-live">
+                    <i th:class="${#strings.contains(p.linkDeploy, 'figma')} ? 'fab fa-figma' : 'fas fa-external-link-alt'"></i>
+                    <span th:text="${#strings.contains(p.linkDeploy, 'figma')} ? ' Ver Protótipo' : ' Online'"></span>
+                </a>
             </div>
         </div>
     </div>
@@ -166,7 +174,7 @@
     <footer>
         <p>Izabela Xavier | <strong>Backend Developer</strong></p>
         <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">
-            Construído com Java 17, Spring Boot e persistência de dados.
+            Construído com Java 17, Spring Boot e Figma.
         </p>
         <p style="margin-top: 10px; opacity: 0.5;">ADS | Uninter 2026</p>
     </footer>
