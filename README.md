@@ -22,7 +22,15 @@ Bem-vindos ao meu portfólio profissional! Este projeto foi desenvolvido para co
 * **Railway** (Hospedagem e Cloud)
 
 ---
+## 🔄 Evolução do Projeto
 
+Este projeto passou por uma etapa importante de **refatoração e modernização** para alinhar-se às práticas atuais do mercado:
+
+* **Migração de Stack:** O sistema foi atualizado para **Java 17** e **Spring Boot 3**, aproveitando as melhorias de performance e segurança.
+* **Refatoração de Arquitetura:** Migração de uma estrutura monolítica simples para o padrão de **camadas (Controller-Service-Repository)**, garantindo melhor testabilidade.
+* **Otimização de Banco de Dados:** Substituição da lógica de persistência manual por **Spring Data JPA**, reduzindo o código boilerplate e otimizando queries.
+
+----
 ### 💼 Experiência & Projetos
 
 Atualmente sou **Estagiária de TI na Prefeitura de Matozinhos**, onde trabalho com automação fiscal e desenvolvimento de APIs. Neste portfólio, você encontrará:
