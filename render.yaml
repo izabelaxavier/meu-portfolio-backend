@@ -3,4 +3,3 @@ services:
     name: meu-portfolio-backend
     runtime: docker
     buildCommand: ./mvnw clean install
-    startCommand: java -jar target/*.jar
