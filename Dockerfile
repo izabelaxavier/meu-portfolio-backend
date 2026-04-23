@@ -1,7 +1,9 @@
-FROM openjdk:17-jdk-slim
+FROM maven:3.9.6-eclipse-temurin-17
 
 WORKDIR /app
 
-COPY target/*.jar app.jar
+COPY . .
 
-CMD ["java", "-jar", "app.jar"]
+RUN mvn clean package
+
+CMD ["java", "-jar", "target/*.jar"]
